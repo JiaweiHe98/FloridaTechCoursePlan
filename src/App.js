@@ -1,4 +1,4 @@
-import { Box, Divider, Paper, Typography } from '@mui/material';
+import { Box, Divider, Paper, Menu, MenuItem } from '@mui/material';
 import { useEffect, useState, useRef } from 'react';
 import './App.css';
 import { CartContext } from './component/context/CartContext';
@@ -16,6 +16,7 @@ import { generateIndex, search } from './utils/search';
 import { TimeTable } from './component/scheduler/TimeTable';
 import BasicModal from './component/modal/BasicModal';
 import { read, store } from './utils/localStorageHelper';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 function App() {
   const [dimensions, setDimensions] = useState({
@@ -38,6 +39,9 @@ function App() {
   const [headerHeight, setHeaderHeight] = useState(0);
   const headerRef = useRef();
 
+  const matches = useMediaQuery('(min-width:1000px)');
+  const matchesDay = useMediaQuery('(min-width:1290px)');
+
   useEffect(() => {
     store(cart);
   }, [cart]);
@@ -54,7 +58,7 @@ function App() {
 
   useEffect(() => {
     const debouncedHandleResize = debounce(function handleResize() {
-      if (window.innerHeight >= 450 && window.innerWidth >= 800) {
+      if (window.innerHeight >= 450 && window.innerWidth >= 760) {
         setDimensions({
           height: window.innerHeight,
           width: window.innerWidth,
@@ -62,7 +66,7 @@ function App() {
       } else {
         setDimensions({
           height: 450,
-          width: 800,
+          width: 760,
         });
       }
     }, 10);
@@ -125,7 +129,7 @@ function App() {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          minWidth: '800px',
+          minWidth: '850px',
           minHeight: '450px',
           maxHeight: '100vh',
           maxWidth: '100vw',
@@ -161,21 +165,38 @@ function App() {
                     <Paper
                       square
                       sx={{
-                        width: 380,
+                        width: matches ? 380 : 'calc(100% - 380px)',
                         minWidth: 380,
                         height: dimensions.height - headerHeight,
                       }}
                     >
                       <CartList headerHeight={headerHeight} />
                     </Paper>
-                    <Paper square sx={{ width: 'calc(100vw - 350px - 380px)' }}>
+                    {matches && (
+                      <Paper
+                        square
+                        sx={{ width: 'calc(100vw - 380px - 380px)' }}
+                      >
+                        <TimeTable
+                          matchesDay={matchesDay}
+                          headerHeight={headerHeight}
+                          rows={21}
+                          cols={5}
+                        />
+                      </Paper>
+                    )}
+                  </Box>
+                  {!matches && (
+                    <Paper square sx={{ width: '100%', height: '100vh' }}>
+                      <Divider />
                       <TimeTable
+                        matchesDay={true}
                         headerHeight={headerHeight}
                         rows={21}
                         cols={5}
                       />
                     </Paper>
-                  </Box>
+                  )}
                 </PrefixMapContext.Provider>
               </DimensionContext.Provider>
             </CartContext.Provider>

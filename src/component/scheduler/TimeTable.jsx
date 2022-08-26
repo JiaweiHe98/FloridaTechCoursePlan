@@ -60,7 +60,7 @@ const startArr = [8, 0];
 const endArr = [18, 30];
 const totalMin = calDurationMinStartEnd(startArr, endArr);
 
-export const TimeTable = ({ headerHeight, rows, cols }) => {
+export const TimeTable = ({ headerHeight, rows, cols, matchesDay }) => {
   const dimensions = useContext(DimensionContext);
 
   const [cart] = useContext(CartContext);
@@ -144,8 +144,18 @@ export const TimeTable = ({ headerHeight, rows, cols }) => {
       <>
         <TableCell sx={{ width: '6%' }} />
         {[...Array(cols).keys()].map((index) => (
-          <TableCell sx={{ width: `${94 / cols}%` }} key={index}>
-            {shortDayToLongDay[Object.keys(shortDayToLongDay)[index]]}
+          <TableCell
+            sx={{
+              wordBreak: 'break-all',
+              pr: 0,
+              width: `${94 / cols}%`,
+              maxWidth: `${94 / cols}%`,
+            }}
+            key={index}
+          >
+            {matchesDay
+              ? shortDayToLongDay[Object.keys(shortDayToLongDay)[index]]
+              : Object.keys(shortDayToLongDay)[index]}
           </TableCell>
         ))}
       </>
