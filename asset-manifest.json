@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.642438be.css",
-    "main.js": "/static/js/main.a0e5a767.js",
-    "static/js/787.43cdf69d.chunk.js": "/static/js/787.43cdf69d.chunk.js",
-    "index.html": "/index.html",
-    "main.642438be.css.map": "/static/css/main.642438be.css.map",
-    "main.a0e5a767.js.map": "/static/js/main.a0e5a767.js.map",
-    "787.43cdf69d.chunk.js.map": "/static/js/787.43cdf69d.chunk.js.map"
+    "main.css": "/course.jiaweihe98.com/static/css/main.642438be.css",
+    "main.js": "/course.jiaweihe98.com/static/js/main.48a99dbb.js",
+    "static/js/787.43cdf69d.chunk.js": "/course.jiaweihe98.com/static/js/787.43cdf69d.chunk.js",
+    "index.html": "/course.jiaweihe98.com/index.html",
+    "main.642438be.css.map": "/course.jiaweihe98.com/static/css/main.642438be.css.map",
+    "main.48a99dbb.js.map": "/course.jiaweihe98.com/static/js/main.48a99dbb.js.map",
+    "787.43cdf69d.chunk.js.map": "/course.jiaweihe98.com/static/js/787.43cdf69d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.642438be.css",
-    "static/js/main.a0e5a767.js"
+    "static/js/main.48a99dbb.js"
   ]
 }
