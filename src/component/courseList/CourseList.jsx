@@ -1,8 +1,8 @@
 import React, { useEffect, useContext, useRef, useState } from 'react';
-import { Box, Typography, TextField, Paper } from '@mui/material';
+import { Box, Paper } from '@mui/material';
 import TabPanel from './TabPanel';
-import SwipeableViews from 'react-swipeable-views';
-import { virtualize, bindKeyboard } from 'react-swipeable-views-utils';
+// import SwipeableViews from 'react-swipeable-views';
+// import { virtualize, bindKeyboard } from 'react-swipeable-views-utils';
 import { CurrentCourseListContext } from '../context/CurrentCourseListContext';
 import PrefixList from './virtualizedList/PrefixList';
 import SuffixList from './virtualizedList/SuffixList';
@@ -12,7 +12,7 @@ import { DimensionContext } from '../context/DimensionContext';
 import SearchList from './virtualizedList/SearchList';
 import { processCourse } from '../../utils/processCourse';
 
-const VirtualizeSwipeableViews = bindKeyboard(virtualize(SwipeableViews));
+// const VirtualizeSwipeableViews = bindKeyboard(virtualize(SwipeableViews));
 
 // const RnderPrefixList = ({
 //   dimensions,

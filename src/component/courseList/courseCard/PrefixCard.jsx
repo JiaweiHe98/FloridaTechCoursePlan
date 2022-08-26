@@ -4,7 +4,6 @@ import {
   Typography,
   IconButton,
   Tooltip,
-  CardActionArea,
 } from '@mui/material';
 import { PrefixMapContext } from '../../context/PrefixMapContext';
 import InfoIcon from '@mui/icons-material/Info';

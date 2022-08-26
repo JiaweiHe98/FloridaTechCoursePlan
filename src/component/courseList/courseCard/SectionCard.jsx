@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Box, Tooltip, Typography } from '@mui/material';
 import { PrefixMapContext } from '../../context/PrefixMapContext';
 import ExpandLess from '@mui/icons-material/ExpandLess';

@@ -1,4 +1,4 @@
-import { Box, Divider, Paper, Menu, MenuItem } from '@mui/material';
+import { Box, Divider, Paper } from '@mui/material';
 import { useEffect, useState, useRef } from 'react';
 import './App.css';
 import { CartContext } from './component/context/CartContext';
